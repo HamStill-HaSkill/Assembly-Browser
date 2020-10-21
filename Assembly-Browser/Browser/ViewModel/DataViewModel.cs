@@ -36,6 +36,7 @@ namespace Browser.ViewModel
             get 
             {
                 var openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = ".Net assembly files (*.exe, *.dll) |*.exe;*.dll";
                 return _OpenCommand ??
                   (_OpenCommand = new OpenFile(obj =>
                   {
