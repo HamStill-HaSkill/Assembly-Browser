@@ -50,18 +50,15 @@ namespace Assembly_BrowserLib
                             ns.Name = type.Namespace;
                             ns.Classes.Add(typeinfo);
                             assemblies.Add(ns);
-
-                        }
-                    
+                        } 
                     }
                 }
-            } catch
+            } 
+            catch
             {
 
             }
-
             return assemblies;
         }
-
     }
 }

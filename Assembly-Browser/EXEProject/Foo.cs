@@ -14,5 +14,6 @@ namespace EXEProject.Test
         }
         private int B2;
         public long M2 { get; set; }
+
     }
 }

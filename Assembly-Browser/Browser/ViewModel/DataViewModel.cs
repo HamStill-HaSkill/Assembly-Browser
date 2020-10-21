@@ -1,4 +1,5 @@
 ﻿using Assembly_BrowserLib;
+using Browser.Model;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ namespace Browser.ViewModel
     {
         public DataViewModel()
         {
-            //string path = @"C:\Users\Xiaomi\source\repos\Faker\Faker\bin\Debug\netcoreapp3.1\Faker.dll";
-            _Types = new AssemblyBrowser().GetAssemblyInfo(_Path);
+            _Types = _AsmData.GetAsmData(_Path);
         }
         private List<NamespaceInfo> _Types;
         private OpenFile _OpenCommand;
-        private String _Path;
+        private DataModel _AsmData = new DataModel();
+        private string _Path;
         public List<NamespaceInfo> Types
         {
             get { return _Types; }
@@ -50,7 +51,7 @@ namespace Browser.ViewModel
             set
             {
                 _Path = value;
-                Types = new AssemblyBrowser().GetAssemblyInfo(_Path);
+                Types = _AsmData.GetAsmData(_Path);
                 OnPropertyChanged();
             }
         }
