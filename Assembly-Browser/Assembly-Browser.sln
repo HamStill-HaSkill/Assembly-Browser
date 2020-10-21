@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Browser", "Browser\Browser.csproj", "{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXEProject", "EXEProject\EXEProject.csproj", "{E6EE73DC-F238-4078-B406-394EAD9A97FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6EE73DC-F238-4078-B406-394EAD9A97FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6EE73DC-F238-4078-B406-394EAD9A97FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6EE73DC-F238-4078-B406-394EAD9A97FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6EE73DC-F238-4078-B406-394EAD9A97FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

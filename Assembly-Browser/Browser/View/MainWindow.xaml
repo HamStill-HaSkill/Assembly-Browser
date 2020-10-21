@@ -11,14 +11,17 @@
         <local:DataViewModel/>
     </Window.DataContext>
     <Grid>
-
-        <TreeView x:Name="treeView1" ItemsSource="{Binding Types}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TreeView x:Name="treeView1" ItemsSource="{Binding Types}" Grid.Row="0">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Classes}" DataType="NamespaceInfo">
                     <TextBlock Text="{Binding Name}" />
-
                     <HierarchicalDataTemplate.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding MethodsFieldsProperties}" DataType="TypeInfo">
+                        <HierarchicalDataTemplate ItemsSource="{Binding MethodsFieldsPropertiesConstucters}" DataType="TypeInfo">
                             <TextBlock Text="{Binding Name}" />
                             <HierarchicalDataTemplate.ItemTemplate>
                                 <HierarchicalDataTemplate>
@@ -30,6 +33,8 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
+        <Button Command="{Binding OpenCommand}" Grid.Row="1">Open</Button>
+        <TextBox Grid.Row="2" Text="{Binding Path}"></TextBox>
     </Grid>
 </Window>
     
