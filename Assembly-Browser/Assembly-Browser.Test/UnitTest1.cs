@@ -1,5 +1,7 @@
 using Assembly_BrowserLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Browser.Test
@@ -7,28 +9,61 @@ namespace Browser.Test
     [TestClass]
     public class UnitTest1
     {
+        public List<int> A;
+
+        [TestMethod]
+        public void MethodNameTest()
+        {
+            string expected = "Method: Void MethodNameTest()";
+
+            string path = Directory.GetCurrentDirectory();
+            path += @"\Assembly-Browser.Test.dll";
+
+            var asm = new AssemblyBrowser().GetAssemblyInfo(path);
+
+            string actual = asm[1].Classes[0].Methods[0].Name;
+            Assert.AreEqual(expected, actual);
+        }
         [TestMethod]
         public void NamespaceTest()
         {
-            string expected = "EXEProject";
+            string expected = "Browser.Test";
+            string path = Directory.GetCurrentDirectory();
+            path += @"\Assembly-Browser.Test.dll";
 
-            string path = @"C:\Users\Xiaomi\source\repos\Assembly-Browser\Assembly-Browser\EXEProject\bin\Debug\EXEProject.exe";
             var asm = new AssemblyBrowser().GetAssemblyInfo(path);
 
-            string actual = asm[0].Name;
+            string actual = asm[1].Name;
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void ClassNameTest()
         {
-            string expected = "Program";
+            string expected = "UnitTest1";
 
-            string path = @"C:\Users\Xiaomi\source\repos\Assembly-Browser\Assembly-Browser\EXEProject\bin\Debug\EXEProject.exe";
+            string path = Directory.GetCurrentDirectory();
+            path += @"\Assembly-Browser.Test.dll";
+
             var asm = new AssemblyBrowser().GetAssemblyInfo(path);
 
-            string actual = asm[0].Classes[0].Name;
+            string actual = asm[1].Classes[0].Name;
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void GenericNameTest()
+        {
+            string expected = "Field: List<Int32> A";
+
+            string path = Directory.GetCurrentDirectory();
+            path += @"\Assembly-Browser.Test.dll";
+
+            var asm = new AssemblyBrowser().GetAssemblyInfo(path);
+
+            string actual = asm[1].Classes[0].Fields[0].Name;
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void BadFilePathTest()
         {

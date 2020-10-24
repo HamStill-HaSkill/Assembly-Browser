@@ -8,12 +8,8 @@ namespace EXEProject.Test
 {
     class Foo
     {
-        public Foo(int I)
-        {
-            B2 += I;
-        }
-        private int B2;
+        public List<string> B2;
         public long M2 { get; set; }
-
+        
     }
 }

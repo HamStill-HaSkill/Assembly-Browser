@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly-BrowserLib", "Asse
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly-Browser.Test", "Assembly-Browser.Test\Assembly-Browser.Test.csproj", "{3BC55E4E-EC29-4741-AC42-DD04B7ED654C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B8F39CBA-65AF-4E58-9855-94B063376A49}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Browser", "Browser\Browser.csproj", "{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXEProject", "EXEProject\EXEProject.csproj", "{E6EE73DC-F238-4078-B406-394EAD9A97FD}"
@@ -27,10 +25,6 @@ Global
 		{3BC55E4E-EC29-4741-AC42-DD04B7ED654C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC55E4E-EC29-4741-AC42-DD04B7ED654C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC55E4E-EC29-4741-AC42-DD04B7ED654C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8F39CBA-65AF-4E58-9855-94B063376A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8F39CBA-65AF-4E58-9855-94B063376A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8F39CBA-65AF-4E58-9855-94B063376A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8F39CBA-65AF-4E58-9855-94B063376A49}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F435C6F2-6F6C-4321-A22F-5EDEAC71BC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU

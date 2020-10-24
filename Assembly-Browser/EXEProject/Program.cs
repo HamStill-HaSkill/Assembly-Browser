@@ -15,6 +15,10 @@ namespace EXEProject
         {
             return str;
         }
+        public List<List<int>> Test(List<List<int>> hello)
+        {
+            return hello;
+        }
         private int B;
         public long M { get; set; }
     }

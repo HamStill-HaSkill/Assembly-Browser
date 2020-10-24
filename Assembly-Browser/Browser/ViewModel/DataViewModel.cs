@@ -13,15 +13,11 @@ namespace Browser.ViewModel
 {
     class DataViewModel : ViewModelBase
     {
-        public DataViewModel()
-        {
-            _Types = _AsmData.GetAsmData(_Path);
-        }
-        private List<NamespaceInfo> _Types;
+        private List<Namesp> _Types;
         private OpenFile _OpenCommand;
         private DataModel _AsmData = new DataModel();
         private string _Path;
-        public List<NamespaceInfo> Types
+        public List<Namesp> Types
         {
             get { return _Types; }
             set
@@ -51,10 +47,41 @@ namespace Browser.ViewModel
             get { return _Path; }
             set
             {
-                _Path = value;
-                Types = _AsmData.GetAsmData(_Path);
+                _Path = value; 
+                Types = GetDataForTreeView(_AsmData.GetAsmData(_Path));
                 OnPropertyChanged();
             }
+        }
+
+        public List<Namesp> GetDataForTreeView(List<NamespaceInfo> namespaces)
+        {
+            var namesps = new List<Namesp>();
+            foreach(var item in namespaces)
+            {
+                var nsp = new Namesp();
+                nsp.Name = item.Name;
+                foreach (var type in item.Classes)
+                {
+                    var typeInfoFlat = new TypeInfoFlat();
+                    typeInfoFlat.Name = type.Name;
+
+                    foreach (var method in type.Methods)
+                        typeInfoFlat.MFPC.Add(method.Name);
+
+                    foreach (var fields in type.Fields)
+                        typeInfoFlat.MFPC.Add(fields.Name);
+
+                    foreach (var property in type.Properties)
+                        typeInfoFlat.MFPC.Add(property.Name);
+
+                    foreach (var constructor in type.Constructors)
+                        typeInfoFlat.MFPC.Add(constructor.Name);
+
+                    nsp.Classes.Add(typeInfoFlat);
+                }
+                namesps.Add(nsp);
+            }
+            return namesps;
         }
 
     }

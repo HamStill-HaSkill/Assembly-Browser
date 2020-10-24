@@ -25,19 +25,36 @@ namespace Assembly_BrowserLib
 
                         foreach (var method in type.GetMethods())
                             if (Attribute.GetCustomAttribute(method, typeof(CompilerGeneratedAttribute)) == null)
-                                typeinfo.MethodsFieldsPropertiesConstucters.Add("Method: " + method.ToString());
+                            {
+                                var methodInfo = new MethodInfo();
+                                methodInfo.SetName(method);
+                                typeinfo.Methods.Add(methodInfo);
+                            }
+                                
 
                         foreach (var field in type.GetFields())
                             if (Attribute.GetCustomAttribute(field, typeof(CompilerGeneratedAttribute)) == null)
-                                typeinfo.MethodsFieldsPropertiesConstucters.Add("Field: " + field.ToString());
+                            {
+                                var fieldInfo = new FieldInfo();
+                                fieldInfo.SetName(field);
+                                typeinfo.Fields.Add(fieldInfo);
+                            }
 
                         foreach (var property in type.GetProperties())
                             if (Attribute.GetCustomAttribute(property, typeof(CompilerGeneratedAttribute)) == null)
-                                typeinfo.MethodsFieldsPropertiesConstucters.Add("Property: " + property.ToString());
+                            {
+                                var propetryInfo = new PropertyInfo();
+                                propetryInfo.SetName(property);
+                                typeinfo.Properties.Add(propetryInfo);
+                            }
 
                         foreach (var constructor in type.GetConstructors())
                             if (Attribute.GetCustomAttribute(constructor, typeof(CompilerGeneratedAttribute)) == null)
-                                typeinfo.MethodsFieldsPropertiesConstucters.Add("Constructor: " + constructor.ToString());
+                            {
+                                var constructorInfo = new ConstructorInfo();
+                                constructorInfo.SetName(constructor);
+                                typeinfo.Constructors.Add(constructorInfo);
+                            }
 
                         NamespaceInfo ns = assemblies.Find(item => item.Name == type.Namespace);
                         if(ns != null)
@@ -50,7 +67,8 @@ namespace Assembly_BrowserLib
                             ns.Name = type.Namespace;
                             ns.Classes.Add(typeinfo);
                             assemblies.Add(ns);
-                        } 
+                        }
+                        
                     }
                 }
             } 
